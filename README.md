@@ -6,5 +6,5 @@ Simple GUI based password generator
 2. Enable/Disable Symbols
 3. Specify Password Lenght
 
-#Updates
+# Updates
 1.0 - Relese
