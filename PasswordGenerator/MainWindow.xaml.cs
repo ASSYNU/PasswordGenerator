@@ -7,6 +7,7 @@ namespace PasswordGenerator
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    
     public partial class MainWindow
     {
         private bool NasNumbers = false;

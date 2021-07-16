@@ -17,15 +17,14 @@
             <Grid.RowDefinitions>    
                 <RowDefinition Height="25"></RowDefinition>    
                 <RowDefinition Height="25"></RowDefinition>    
-                <RowDefinition Height="15"></RowDefinition>    
-                <RowDefinition Height="15"></RowDefinition>
-                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="35"></RowDefinition>    
+                <RowDefinition Height="35"></RowDefinition>
                 <RowDefinition Height="36"></RowDefinition>
             </Grid.RowDefinitions> 
             <TextBlock 
                     Text="Password Generator" 
                     HorizontalAlignment="Center" 
-                    VerticalAlignment="Top" 
+                    VerticalAlignment="Center" 
                     FontSize="13" 
                     Background="Transparent" 
                     FontWeight="Heavy"
@@ -36,45 +35,43 @@
                 Text=""
                 HorizontalAlignment="Center" 
                 VerticalAlignment="Top" 
-                FontSize="5" 
+                FontSize="8" 
                 Background="Transparent" 
                 Foreground="White"
                 BorderBrush="Transparent"
-                Grid.Row="1"/>
+                Grid.Row="1"
+                IsReadOnly="True"/>
             <TextBox 
                 x:Name="GenPass"
                 Text=""
                 HorizontalAlignment="Center" 
                 VerticalAlignment="Center" 
-                FontSize="5" 
+                FontSize="8" 
                 Background="Transparent" 
                 Foreground="White"
                 BorderBrush="Transparent"
                 Grid.Row="1"/>
-            <CheckBox x:Name="EnableNumbersCb" 
-                      Content="Numbers Disabled" 
-                      FontSize="8"
-                      HorizontalAlignment="Left"
-                      VerticalAlignment="Center"
-                      Checked="EnableNumbers" 
-                      Unchecked="DisableNumbers"
-                      Foreground="White"
-                      Grid.Row="2"
-                      Margin="5, 0, 0, 0"/>
+            <StackPanel Grid.Row="2">
+                <CheckBox x:Name="EnableNumbersCb"
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Center"
+                          Checked="EnableNumbers" 
+                          Unchecked="DisableNumbers"
+                          Foreground="White"
+                          Margin="5, 0">Numbers Disabled</CheckBox>
                 <CheckBox x:Name="EnableSymbolsCb" 
                           Content="Symbols Disabled" 
-                          FontSize="8"
                           HorizontalAlignment="Left"
                           VerticalAlignment="Center"
                           Checked="EnableSymbols" 
                           Unchecked="DisableSymbols"
                           Foreground="White"
-                          Grid.Row="3"
-                          Margin="5, 0, 0, 0"/>
-            <StackPanel VerticalAlignment="top" Grid.Row="4" HorizontalAlignment="Left"  Width="140" Margin="5, 0, 0, 0">
+                          Margin="5, 0"/>
+            </StackPanel>
+            
+            <StackPanel VerticalAlignment="Center" Grid.Row="3" HorizontalAlignment="Center" Margin="5, 0">
                 <TextBlock x:Name="LenghtSliderText" 
-                           Text="Password Lenght: 8" 
-                           FontSize="8"/>
+                           Text="Password Lenght: 8"/>
                 <Slider x:Name="LenghtSlider"  
                         Maximum="30" Minimum="1" 
                         Value="8" SmallChange="1" 
@@ -85,7 +82,7 @@
                     CornerRadius="2"
                     VerticalAlignment="Center"
                     Height="18"
-                    Grid.Row="5"
+                    Grid.Row="4"
                     Margin="5, 0">
                     <Button 
                         Background="Transparent" 
