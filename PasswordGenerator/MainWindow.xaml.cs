@@ -23,13 +23,13 @@ namespace PasswordGenerator
         // Numbers Checkbox
         private void EnableNumbers(object sender, RoutedEventArgs e)
         {
-            EnableNumbersCb.Content = "Numbers Enabled";
+            EnableNumbersCb.Content = "Numbers: Enabled";
             NasNumbers = true;
         }
 
         private void DisableNumbers(object sender, RoutedEventArgs e)
         {
-            EnableNumbersCb.Content = "Numbers Disabled";
+            EnableNumbersCb.Content = "Numbers: Disabled";
             NasNumbers = false;
         }
         
@@ -37,13 +37,13 @@ namespace PasswordGenerator
         
         private void EnableSymbols(object sender, RoutedEventArgs e)
         {
-            EnableSymbolsCb.Content = "Symbols Enabled";
+            EnableSymbolsCb.Content = "Symbols: Enabled";
             NasSymbols = true;
         }
 
         private void DisableSymbols(object sender, RoutedEventArgs e)
         {
-            EnableSymbolsCb.Content = "Symbols Disabled";
+            EnableSymbolsCb.Content = "Symbols: Disabled";
             NasSymbols = false;
         }
         
@@ -53,7 +53,14 @@ namespace PasswordGenerator
         {
             int val = (int)LenghtSlider.Value;
             PasswordLenght = val;
-            LenghtSliderText.Text = "Password Lenght: " + val;
+            if (val < 10)
+            {
+                LenghtSliderText.Text = "Password Lenght: 0" + val;
+            }
+            else
+            {
+                LenghtSliderText.Text = "Password Lenght: " + val;
+            }
         }
         
         // Generate Password

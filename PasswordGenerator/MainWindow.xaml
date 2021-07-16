@@ -13,11 +13,11 @@
         Width="450" 
         Height="600">
     <Viewbox Stretch="Fill">
-        <Grid Name="X" ShowGridLines="False">
+        <Grid Name="X" ShowGridLines="True">
             <Grid.RowDefinitions>    
                 <RowDefinition Height="25"></RowDefinition>    
                 <RowDefinition Height="25"></RowDefinition>    
-                <RowDefinition Height="35"></RowDefinition>    
+                <RowDefinition Height="50"></RowDefinition>    
                 <RowDefinition Height="35"></RowDefinition>
                 <RowDefinition Height="36"></RowDefinition>
             </Grid.RowDefinitions> 
@@ -28,9 +28,9 @@
                     FontSize="13" 
                     Background="Transparent" 
                     FontWeight="Heavy"
-                    Width="130"
+                    Margin="5, 0"
                     Grid.Row="0"/>
-            <TextBox 
+            <TextBlock  
                 x:Name="GenPass0"
                 Text=""
                 HorizontalAlignment="Center" 
@@ -38,9 +38,7 @@
                 FontSize="8" 
                 Background="Transparent" 
                 Foreground="White"
-                BorderBrush="Transparent"
-                Grid.Row="1"
-                IsReadOnly="True"/>
+                Grid.Row="1"/>
             <TextBox 
                 x:Name="GenPass"
                 Text=""
@@ -51,31 +49,31 @@
                 Foreground="White"
                 BorderBrush="Transparent"
                 Grid.Row="1"/>
-            <StackPanel Grid.Row="2">
+            <StackPanel Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5, 0">
                 <CheckBox x:Name="EnableNumbersCb"
-                          HorizontalAlignment="Left"
-                          VerticalAlignment="Center"
+                          Content="Numbers: Disabled"
                           Checked="EnableNumbers" 
                           Unchecked="DisableNumbers"
-                          Foreground="White"
-                          Margin="5, 0">Numbers Disabled</CheckBox>
+                          Foreground="White">
+                </CheckBox>
                 <CheckBox x:Name="EnableSymbolsCb" 
-                          Content="Symbols Disabled" 
-                          HorizontalAlignment="Left"
-                          VerticalAlignment="Center"
+                          Content="Symbols: Disabled" 
                           Checked="EnableSymbols" 
                           Unchecked="DisableSymbols"
-                          Foreground="White"
-                          Margin="5, 0"/>
-            </StackPanel>
-            
-            <StackPanel VerticalAlignment="Center" Grid.Row="3" HorizontalAlignment="Center" Margin="5, 0">
+                          Foreground="White">
+                </CheckBox>
                 <TextBlock x:Name="LenghtSliderText" 
-                           Text="Password Lenght: 8"/>
+                           Text="Password Lenght: 08"/>
                 <Slider x:Name="LenghtSlider"  
-                        Maximum="30" Minimum="1" 
-                        Value="8" SmallChange="1" 
+                        Maximum="30" 
+                        Minimum="1" 
+                        Value="8" 
+                        SmallChange="1" 
+                        Width="200"
                         ValueChanged="LenghtSlider_ValueChanged"/>
+                <StackPanel.LayoutTransform>
+                    <ScaleTransform ScaleX="0.6" ScaleY="0.6"/>
+                </StackPanel.LayoutTransform>
             </StackPanel>
             <Border BorderBrush="#60cdff" 
                     Background="#60cdff" 
