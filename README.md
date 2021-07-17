@@ -8,3 +8,7 @@ Simple GUI based password generator
 
 # Updates
 1.0 - Relese
+
+
+# Discord
+If you like it, please join my discord server! https://discord.gg/mV7zEkeF87
