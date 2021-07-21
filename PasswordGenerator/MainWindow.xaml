@@ -7,20 +7,71 @@
         mc:Ignorable="d"
         FontSize="13" 
         Foreground="White"
-        Background="#202020"
-        ResizeMode="NoResize" 
         Title="PasswordGenerator" 
-        Width="450" 
-        Height="600">
+        Height="600" 
+        Width="450"
+        Background="#F2404040"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="CanResize"
+        WindowStartupLocation="CenterScreen">
     <Viewbox Stretch="Fill">
-        <Grid Name="X" ShowGridLines="True">
-            <Grid.RowDefinitions>    
-                <RowDefinition Height="25"></RowDefinition>    
-                <RowDefinition Height="25"></RowDefinition>    
-                <RowDefinition Height="50"></RowDefinition>    
-                <RowDefinition Height="35"></RowDefinition>
-                <RowDefinition Height="36"></RowDefinition>
-            </Grid.RowDefinitions> 
+        <!-- <Border> -->
+            <Grid Name="X" ShowGridLines="False">
+                <Grid.RowDefinitions>    
+                    <RowDefinition Height="7"></RowDefinition>    
+                    <RowDefinition Height="25"></RowDefinition>    
+                    <RowDefinition Height="25"></RowDefinition>    
+                    <RowDefinition Height="50"></RowDefinition>    
+                    <RowDefinition Height="35"></RowDefinition>
+                </Grid.RowDefinitions> 
+            
+            <Grid ShowGridLines="False" Grid.Row="0" Name="Tb">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            
+                <StackPanel Grid.Column="0"
+                            Grid.Row="0"
+                            Grid.ColumnSpan="4"
+                            Background="#F2353535"
+                            MouseDown="MouseOnTopBar">
+                </StackPanel>
+            
+                <Button Content="EXIT"
+                        Grid.Column="3"
+                        Grid.Row="0"
+                        Click="Exit">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#353535"/>
+                            <Setter Property="TextElement.FontFamily" Value="Fonts/#Roboto"/>
+                            <Setter Property="TextElement.FontSize" Value="6"/>
+                            <Setter Property="TextElement.Foreground" Value="White"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#ff4f4f"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+            
+                    </Button.Style>
+            
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                                    BorderBrush="Transparent"
+                                    BorderThickness="0">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+            
             <TextBlock 
                     Text="Password Generator" 
                     HorizontalAlignment="Center" 
@@ -29,27 +80,30 @@
                     Background="Transparent" 
                     FontWeight="Heavy"
                     Margin="5, 0"
-                    Grid.Row="0"/>
+                    Grid.Row="1"/>
             <TextBlock  
                 x:Name="GenPass0"
-                Text=""
+                Text="Generated Password:"
                 HorizontalAlignment="Center" 
                 VerticalAlignment="Top" 
                 FontSize="8" 
                 Background="Transparent" 
                 Foreground="White"
-                Grid.Row="1"/>
+                Grid.Row="2"/>
             <TextBox 
                 x:Name="GenPass"
-                Text=""
+                Text="Click *GENERATE* to create password"
                 HorizontalAlignment="Center" 
-                VerticalAlignment="Center" 
-                FontSize="8" 
+                VerticalAlignment="Bottom" 
+                FontSize="6" 
                 Background="Transparent" 
                 Foreground="White"
                 BorderBrush="Transparent"
-                Grid.Row="1"/>
-            <StackPanel Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5, 0">
+                IsReadOnly="True"
+                BorderThickness="0"
+                Margin="0, 0, 0, 4"
+                Grid.Row="2"/>
+            <StackPanel Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5, 0">
                 <CheckBox x:Name="EnableNumbersCb"
                           Content="Numbers: Disabled"
                           Checked="EnableNumbers" 
@@ -110,5 +164,6 @@
                     </Button>
                 </Border>
             </Grid>
+        <!-- </Border> -->
     </Viewbox>
 </Window>

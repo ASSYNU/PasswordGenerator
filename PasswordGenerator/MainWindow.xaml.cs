@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows;
+using System.Windows.Input;
 
 namespace PasswordGenerator
 {
@@ -19,6 +20,21 @@ namespace PasswordGenerator
         {
             InitializeComponent();
         }
+        
+        // Top bar
+
+        private void MouseOnTopBar(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+        
 
         // Numbers Checkbox
         private void EnableNumbers(object sender, RoutedEventArgs e)
@@ -92,7 +108,6 @@ namespace PasswordGenerator
             }
             
             GenPass.Text = Password;
-            GenPass0.Text = "Generated Password:";
         }
     }
 }
