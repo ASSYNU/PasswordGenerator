@@ -11,4 +11,4 @@ Simple GUI based password generator
 
 
 # Discord
-If you like it, please join my discord server! https://discord.gg/mV7zEkeF87
+If you like it, please join my discord server! https://discord.gg/m3dDCMd7kJ
